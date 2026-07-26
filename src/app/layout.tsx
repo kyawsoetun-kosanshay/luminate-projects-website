@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { contact } from "@/data/contact";
 import { site } from "@/data/site";
 import { getSiteUrl } from "@/lib/siteUrl";
@@ -102,6 +103,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
