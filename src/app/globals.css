@@ -1,0 +1,288 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+@theme inline {
+  --color-page: var(--color-background);
+  --color-panel: var(--color-surface);
+  --color-panel-subtle: var(--color-surface-subtle);
+  --color-navy: var(--color-surface-dark);
+  --color-ink: var(--color-text);
+  --color-quiet: var(--color-text-muted);
+  --color-line: var(--color-border);
+  --color-gold: var(--color-accent);
+  --color-ring: var(--color-focus);
+  --font-sans: var(--font-family-text);
+  --font-display: var(--font-family-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--color-background);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: clip;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family-text);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a:not(.button-primary):not(.button-secondary):not(.button-ghost):not(
+    .button-light-on-dark
+  ):not(.button-outline-on-dark) {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+@layer components {
+  /*
+   * The supplied logo artwork sits inside a 1500px transparent square.
+   * These clipped viewports expose its 854x380 visible bounds without
+   * altering or duplicating the original files.
+   */
+  .brand-logo {
+    width: 5.0625rem;
+    height: 2.25rem;
+  }
+
+  .brand-logo-image {
+    top: -3.3158rem;
+    left: -1.9125rem;
+    width: 8.8816rem;
+    height: 8.8816rem;
+  }
+
+  @media (min-width: 40rem) {
+    .brand-logo {
+      width: 5.6184rem;
+      height: 2.5rem;
+    }
+
+    .brand-logo-image {
+      top: -3.6842rem;
+      left: -2.125rem;
+      width: 9.8684rem;
+      height: 9.8684rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .brand-logo {
+      width: 6.1803rem;
+      height: 2.75rem;
+    }
+
+    .brand-logo-image {
+      top: -4.0526rem;
+      left: -2.3375rem;
+      width: 10.8553rem;
+      height: 10.8553rem;
+    }
+  }
+
+  .button-primary {
+    border-color: var(--color-deep-navy);
+    background-color: var(--color-deep-navy);
+    color: var(--color-pure-white);
+  }
+
+  .button-primary:hover {
+    border-color: #14345d;
+    background-color: #14345d;
+    color: var(--color-pure-white);
+  }
+
+  .button-secondary {
+    border-color: var(--color-deep-navy);
+    background-color: transparent;
+    color: var(--color-deep-navy);
+  }
+
+  .button-secondary:hover {
+    border-color: var(--color-deep-navy);
+    background-color: var(--color-deep-navy);
+    color: var(--color-pure-white);
+  }
+
+  .button-ghost {
+    border-color: transparent;
+    background-color: transparent;
+    color: var(--color-deep-navy);
+  }
+
+  .button-ghost:hover {
+    background-color: var(--color-subtle-surface);
+    color: var(--color-deep-navy);
+  }
+
+  .button-light-on-dark {
+    border-color: var(--color-pure-white);
+    background-color: var(--color-pure-white);
+    color: var(--color-deep-navy);
+  }
+
+  .button-light-on-dark:hover {
+    border-color: var(--color-soft-silver);
+    background-color: var(--color-apple-white);
+    color: var(--color-deep-navy);
+  }
+
+  .button-outline-on-dark {
+    border-color: rgb(255 255 255 / 0.5);
+    background-color: transparent;
+    color: var(--color-pure-white);
+  }
+
+  .button-outline-on-dark:hover {
+    border-color: var(--color-pure-white);
+    background-color: var(--color-pure-white);
+    color: var(--color-deep-navy);
+  }
+
+  .home-reveal {
+    animation: home-reveal 700ms var(--ease-emphasized) both;
+  }
+
+  .home-reveal-delay-1 {
+    animation-delay: 100ms;
+  }
+
+  .type-display-xl {
+    font-family: var(--font-family-display);
+    font-size: clamp(3.25rem, 8vw, 7.5rem);
+    font-weight: 650;
+    letter-spacing: -0.055em;
+    line-height: 0.94;
+  }
+
+  .type-display-lg {
+    font-family: var(--font-family-display);
+    font-size: clamp(2.75rem, 6vw, 5.5rem);
+    font-weight: 650;
+    letter-spacing: -0.048em;
+    line-height: 0.98;
+  }
+
+  .type-h1 {
+    font-family: var(--font-family-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 650;
+    letter-spacing: -0.042em;
+    line-height: 1;
+  }
+
+  .type-h2 {
+    font-family: var(--font-family-display);
+    font-size: clamp(2.125rem, 4vw, 3.5rem);
+    font-weight: 650;
+    letter-spacing: -0.035em;
+    line-height: 1.06;
+  }
+
+  .type-h3 {
+    font-family: var(--font-family-display);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 620;
+    letter-spacing: -0.025em;
+    line-height: 1.12;
+  }
+
+  .type-h4 {
+    font-family: var(--font-family-display);
+    font-size: clamp(1.375rem, 2vw, 1.75rem);
+    font-weight: 620;
+    letter-spacing: -0.018em;
+    line-height: 1.2;
+  }
+
+  .type-lead {
+    font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+    font-weight: 400;
+    letter-spacing: -0.012em;
+    line-height: 1.55;
+  }
+
+  .type-body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.65;
+  }
+
+  .type-small {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.55;
+  }
+
+  .type-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+
+  .type-nav {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    line-height: 1.25;
+  }
+
+  .type-button {
+    font-size: 0.875rem;
+    font-weight: 650;
+    letter-spacing: 0.005em;
+    line-height: 1;
+  }
+}
+
+@keyframes home-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
