@@ -17,6 +17,10 @@ export const metadata = createPageMetadata({
   path: "/work",
 });
 
+const workProjects = projects.filter(
+  (project) => project.galleryImages.length >= 3,
+);
+
 export default function WorkPage() {
   return (
     <>
@@ -34,7 +38,7 @@ export default function WorkPage() {
               <div>
                 <Eyebrow>Project archive</Eyebrow>
                 <h2 id="projects-title" className="type-h2 mt-6 text-navy">
-                  Five selected projects.
+                  {workProjects.length} selected projects.
                 </h2>
               </div>
               <p className="type-body max-w-md text-quiet">
@@ -43,7 +47,7 @@ export default function WorkPage() {
             </div>
 
             <div className="mt-14 space-y-20">
-              {projects.map((project, index) => (
+              {workProjects.map((project, index) => (
                 <article
                   key={project.id}
                   data-project-id={project.id}
@@ -70,7 +74,7 @@ export default function WorkPage() {
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] bg-panel-subtle sm:col-span-2">
                         <Image
-                          src={project.coverImage}
+                          src={project.galleryImages[0]}
                           alt=""
                           fill
                           sizes="(min-width: 1024px) 60vw, 100vw"
@@ -79,7 +83,7 @@ export default function WorkPage() {
                         />
                       </div>
                       {project.galleryImages
-                        .slice(0, 2)
+                        .slice(1, 3)
                         .map((image) => (
                           <div
                             key={image}
