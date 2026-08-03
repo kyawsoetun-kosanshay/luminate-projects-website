@@ -36,7 +36,7 @@ export const projects: readonly Project[] = [
     role: "Creative Event Organizing Leader",
     overview:
       "Led overall event coordination, team communication, on-site operations and real-time problem solving.",
-    date: "Aug 1, 2026",
+    date: "June 20, 2026",
     location: "M-Tower, Hledan, Yangon",
     statistics: [
       { value: "80+", label: "Team members and stakeholders coordinated" },
@@ -70,7 +70,7 @@ export const projects: readonly Project[] = [
     ],
     result:
       "Delivered a well-organized fair with strong participant engagement and seamless event execution.",
-    date: "July 2026",
+    date: "March 28, 2026",
     location: "Jasmine Palace Hotel",
     coverImage:
       "/assets/optimized/covers/germany-education-fair-cover.webp",
@@ -110,33 +110,6 @@ export const projects: readonly Project[] = [
     galleryOrientations: ["landscape", "portrait", "landscape"],
   },
   {
-    id: "kirigami-burmese-papercut",
-    slug: "kirigami-burmese-papercut",
-    name: "Kirigami & Burmese Papercut",
-    category: "Art exhibition / cultural project",
-    client: "Solo Exhibition by Phyo Thamein",
-    role: "Curator & Creative Project Manager",
-    objective:
-      "Curate and manage a solo exhibition highlighting Burmese papercutting as cultural heritage.",
-    responsibilities: [
-      "Created a balanced exhibition flow",
-      "Organized artworks by storytelling and audience experience",
-      "Managed timeline, preparation and installation",
-    ],
-    result:
-      "Successfully curated and managed “NARROW SKY: Kirigami and Burmese Papercut.”",
-    date: "Oct 2–16, 2025",
-    location: "The Japan Foundation, Yangon",
-    coverImage:
-      "/assets/optimized/covers/kirigami-burmese-papercut-cover.webp",
-    galleryImages: [
-      "/assets/optimized/gallery/kirigami-burmese-papercut-01.webp",
-      "/assets/optimized/gallery/kirigami-burmese-papercut-02.webp",
-      "/assets/optimized/gallery/kirigami-burmese-papercut-03.webp",
-      "/assets/optimized/gallery/kirigami-burmese-papercut-04.webp",
-    ],
-  },
-  {
     id: "global-education-fair",
     slug: "global-education-fair",
     name: "Global Education Fair",
@@ -152,7 +125,7 @@ export const projects: readonly Project[] = [
     ],
     result:
       "Delivered a well-organized event with smooth operations and positive participant experiences.",
-    date: "June 4, 2024",
+    date: "October 19, 2025",
     location: "Pan Pacific Hotel",
     coverImage:
       "/assets/optimized/covers/global-education-fair-cover.webp",
@@ -163,6 +136,33 @@ export const projects: readonly Project[] = [
       "/assets/optimized/gallery/global-education-fair-04.webp",
     ],
     galleryAspectRatios: ["4/3", "4/3", "4/3", "4/3"],
+  },
+  {
+    id: "kirigami-burmese-papercut",
+    slug: "kirigami-burmese-papercut",
+    name: "Kirigami & Burmese Papercut",
+    category: "Art exhibition / cultural project",
+    client: "Solo Exhibition by Phyo Thamein",
+    role: "Curator & Creative Project Manager",
+    objective:
+      "Curate and manage a solo exhibition highlighting Burmese papercutting as cultural heritage.",
+    responsibilities: [
+      "Created a balanced exhibition flow",
+      "Organized artworks by storytelling and audience experience",
+      "Managed timeline, preparation and installation",
+    ],
+    result:
+      "Successfully curated and managed “NARROW SKY: Kirigami and Burmese Papercut.”",
+    date: "October 2–16, 2025",
+    location: "The Japan Foundation, Yangon",
+    coverImage:
+      "/assets/optimized/covers/kirigami-burmese-papercut-cover.webp",
+    galleryImages: [
+      "/assets/optimized/gallery/kirigami-burmese-papercut-01.webp",
+      "/assets/optimized/gallery/kirigami-burmese-papercut-02.webp",
+      "/assets/optimized/gallery/kirigami-burmese-papercut-03.webp",
+      "/assets/optimized/gallery/kirigami-burmese-papercut-04.webp",
+    ],
   },
 ];
 
